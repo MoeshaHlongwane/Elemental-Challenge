@@ -1,58 +1,32 @@
 body {
     background-color: white;
     margin: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #061C2C;  
 }
   
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
   } 
 .burger {
     font-size: 24px;
     cursor: pointer;
 }
-  
+
 .hero {
-  background-size: cover;
-  background-position: center;
   height: 600px;
   position: relative;
   margin: 60px 0;
 }
 
-.slide.active {
-  display: block;
+.carousel {
+  position: relative;
+  height: 100%;
 }
 
-.rectangle {
-  position: absolute;
-  left: -40px;
-  top: 295px;
-  width: 700px;
-  height: 150px;
-  background-color: blue;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 25px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s slide-in;
-}
-
-.slide.active .rectangle {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-h4 {
-  position: absolute;
-  right: 30px; 
-  margin: 0;
-  text-align: right;
-}
 .slide {
   position: absolute;
   top: 0;
@@ -64,6 +38,12 @@ h4 {
 
 .slide.active {
   display: block;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .rectangle {
@@ -81,17 +61,12 @@ h4 {
   transform: translateY(20px);
   transition: all 0.5s cubic-bezier(0.5, 0, 1, 1);
 }
-.black-rectangle {
+
+h4 {
   position: absolute;
-  right: -40px;
-  top: 200px;
-  width: 500px;
-  height: 600px;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  opacity: 0;
+  right: 30px; 
+  margin: 0;
+  text-align: right;
 }
 
 .slide.active .rectangle {
@@ -99,105 +74,180 @@ h4 {
   transform: translateY(0);
 }
 
-h4 {
+/* Arrow Navigation */
+.arrow.next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow.next:hover {
+  transform: translateY(-50%) scale(1.2); /* Makes the arrow 20% larger */
+}
+
+.arrow.next img {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.arrow.next:hover img {
+  opacity: 0.5; /* Slightly reduces opacity for a nice effect */
+}
+
+/* Dot navigation */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.dot {
+  height: 22px;
+  width: 22px;
+  margin: 0 6px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* intro section */
+.home-intro {
+  margin: 60px 0;
+}
+
+.home-intro .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.home-intro .inner p {
+  flex: 1;
+  min-width: 300px;
+  font-size: 18px;
+  line-height: 1.6;
   margin: 0;
 }
 
-.carousel {
-    position: relative;
-    height: 100%;
+.home-intro .inner .animated-logo {
+  flex: 1;
+  min-width: 300px;
+  height: 42px;
+  background-image: url(images/asset32.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-  
-.carousel-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+/* Boxes Section */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 60px 0;
 }
-  
-.carousel-img.active {
-    display: block;
-  }
-  
-.dots {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+
+.box {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  height: 150px;
+  background-color: #061c2c;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
 }
-  
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 3px;
-    background-color: gray;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.big-arrow {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.box span {
+  color: white;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Mission Section */
+.mission {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 60px 0;
+}
+
+.mission-box {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  height: 80px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mission-box:hover {
+  background-color: #e0e0e0;
+}
+
+.mission-box span {
+  color: #061C2C;
+  line-height: 1.4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+      margin: 20px;
   }
   
-  .dot.active {
-    background-color: black;
+  .rectangle {
+      width: 50%;
+      left: 0;
+      top: auto;
+      bottom: 50px;
+  }
+  .animated-logo{
+    flex-direction: column;
   }
   
-  .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10px;
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .row-1 {
-    background-color: black;
-  }
-  
-  .subtitle {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .boxes {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    color: blue;
+  .home-intro .inner {
+      flex-direction: column;
   }
   
   .box {
-    width: 500px;
-    height: 150px;
-    background-color: #ddd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+      min-width: 100%;
   }
+}
+
+
+
+
+
+
   
-  .arrow {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-  
-  .mission {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .mission-box {
-    width: 150px;
-    height: 60px;
-    background-color: #bbb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-  }
+
   
