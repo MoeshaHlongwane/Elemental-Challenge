@@ -29,14 +29,14 @@ header {
 .rectangle {
   position: absolute;
   left: -40px;
-  top: 200px;
-  width: 500px;
-  height: 60px;
+  top: 295px;
+  width: 700px;
+  height: 150px;
   background-color: blue;
   color: white;
   display: flex;
   align-items: center;
-  padding-left: 15px;
+  padding-left: 25px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s slide-in;
@@ -48,7 +48,10 @@ header {
 }
 
 h4 {
+  position: absolute;
+  right: 30px; 
   margin: 0;
+  text-align: right;
 }
 .slide {
   position: absolute;
@@ -189,11 +192,12 @@ h4 {
   }
   
   .mission-box {
-    width: 100px;
+    width: 150px;
     height: 60px;
     background-color: #bbb;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 10px;
   }
   
