@@ -8,57 +8,94 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo-black.svg" alt="logo">
-    <div class="burger" onclick="toggleMenu()">☰</div>
-  </header>
-  <section class="hero">
-    <div class="carousel">
-      <div class="slide active">
-        <img src="images/Background_image.png" class="carousel-img" />
-        <div class="rectangle">
-          <h4>LOOK BEYOND THE ORIGINAL</h4>
-        </div>
+  <header class="site-header">
+    <div class="inner">
+      <div class="site-logo">
+        <img class="logo" src="images/logo-black.svg" alt="logo">
       </div>
-      <div class="slide">
-        <img src="images/hill_and_mountain.png" class="carousel-img" />
-        <div class="rectangle">
-          <h4>EXPLORE THE UNKNOWN</h4>
-        </div>
-      </div>
-  
-      <div class="slide">
-        <img src="images/sunset.png" class="carousel-img" />
-        <div class="rectangle">
-          <h4>UNVEIL THE BEAUTY</h4>
-        </div>
-      </div>
-  
-      <div class="slide">
-        <img src="images/forest.png" class="carousel-img" />
-        <div class="rectangle">
-          <h4>DREAM IN COLOR</h4>
-        </div>
-      </div>
-
-      <!-- Arrow Navigation -->
-        <div class="arrow next">
-          <img src="images/slider-next.svg" alt="Next">
-        </div>
-  
-      <div class="dots">
-        <img class="dot active" src="images/slider-dots.svg">
-        <img class="dot" src="images/slider-dots.svg">
-        <img class="dot" src="images/slider-dots.svg">
+      <div class="open-main-nav" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </section>
+    
+    <nav class="site-main-nav">
+      <div class="inner">
+        <div class="close-main-nav" onclick="toggleMenu()">
+          <i class="fas fa-times"></i> <!-- Font Awesome X icon -->
+        </div>
+        <div class="nav-site-logo">
+          <img src="images/logo-black.svg" alt="logo">
+        </div>
+        
+        <div class="menu-main-menu-container">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Our Work</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="animate-logo"></div>
+      </div>
+    </nav>
+  </header>
+
+ <!-- Hero section with carousel -->
+ <section class="hero">
+  <div class="carousel">
+    <div class="slide active">
+      <img src="images/Background_image.png" class="carousel-img" alt="Background image">
+      <div class="rectangle">
+        <h4>LOOK BEYOND THE ORIGINAL</h4>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <img src="images/hill_and_mountain.png" class="carousel-img" alt="Hill and mountain">
+      <div class="rectangle">
+        <h4>EXPLORE THE UNKNOWN</h4>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="images/sunset.png" class="carousel-img" alt="Sunset">
+      <div class="rectangle">
+        <h4>UNVEIL THE BEAUTY</h4>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="images/forest.png" class="carousel-img" alt="Forest">
+      <div class="rectangle">
+        <h4>DREAM IN COLOR</h4>
+      </div>
+    </div>
+
+    <!-- Arrow Navigation -->
+    <div class="arrow next" onclick="nextSlide()">
+    </div>
+
+    <!-- Dot Navigation -->
+    <div class="dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+    </div>
+  </div>
+</section>
 
   <!-- intro section -->
   <section class="home-intro">
     <div class="inner">
       <p>Visio is an investment management firm initially founded by Patrice Moyal in 2003. The nimble, highly focused and dynamic team manage assets across listed strategies for a diversified client base that includes some of the world's largest and most sophisticated investors.</p>
-      <div class="animated-logo"></div>
+      <div>
+        <img src="images/asset32.svg" alt="animated-logo">
+      </div>
     </div>
   </section>
   
@@ -79,12 +116,47 @@
   </section>
 
   <section class="mission">
-    <div class="mission-box"><span><b>HEDGE FUNDS</b></span></div>
-    <div class="mission-box">UNIT TRUSTS</div>
-    <div class="mission-box">SEGREGATED MANADATES</div>
-    <div class="mission-box">AFRICA FUNDS</div>
-    <div class="mission-box">FUND PERFORMANCE</div>
-    <div class="mission-box">RISK MANAGEMENT</div>
+    <div class="mission-box">
+      <span>
+        HEDGE FUNDS
+      </span>
+      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+    </div>
+    <div class="mission-box">
+      <span>
+        UNIT TRUSTS
+      </span>
+      <br>
+      <div class="small-arrow">
+        <img src="images/small-arrow.svg" alt="Arrow">
+      </div>
+    </div>
+    <div class="mission-box">
+      <span>
+        SEGREGATED MANDATES
+      </span>
+      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+    </div>
+    <div class="mission-box">
+      <span>
+        AFRICA FUNDS
+      </span>
+      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+    </div>
+    <div class="mission-box">
+      <span>
+        RISK MANAGEMENT
+      </span>
+      <br>
+      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+    </div>
+    <div class="mission-box">
+      <span>
+        FUND PERFORMANCE
+      </span>
+      <br>
+      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+    </div>
   </section>
 
   <script src="script.js"></script>
