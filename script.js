@@ -1,8 +1,8 @@
 // Carousel functionality
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const nextArrow = document.querySelector('.arrow.next');
+const slides = document.querySelectorAll('.main-slider li');
+const dots = document.querySelectorAll('.pagination .dot');
+const nextBtn = document.querySelector('.next-slide');
 let autoScrollInterval;
 
 function showSlide(index) {
@@ -13,12 +13,24 @@ function showSlide(index) {
     index = slides.length - 1;
   }
   
+  // Update slides
   slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-    if (dots[i]) {
-      dots[i].classList.toggle('active', i === index);
+    if (i === index) {
+      slide.classList.add('active');
+      slide.classList.remove('next');
+    } else if (i === (index + 1) % slides.length) {
+      slide.classList.add('next');
+      slide.classList.remove('active');
+    } else {
+      slide.classList.remove('active', 'next');
     }
   });
+  
+  // Update dots
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  
   currentSlide = index;
   
   // Reset the auto-scroll timer whenever a slide changes
@@ -29,26 +41,14 @@ function nextSlide() {
   showSlide(currentSlide + 1);
 }
 
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
 function resetAutoScroll() {
   clearInterval(autoScrollInterval);
   autoScrollInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
 }
-
-// Toggle menu functionality
-// function toggleMenu() {
-//   const nav = document.querySelector('.main-nav');
-//   const overlay = document.querySelector('.overlay');
-//   const burger = document.querySelector('.burger')
-//   const menuClose = document.querySelector('.menu-close')
- 
-
-//   nav.classList.toggle('active');
-//   overlay.classList.toggle('active');
-//   document.body.classList.toggle('no-scroll');
-
-//    // Toggle burger icon visibility
-//    burger.style.display = nav.classList.contains('active') ? 'none' : 'block';
-// }
 
 // Toggle menu function
 function toggleMenu() {
@@ -73,7 +73,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-
 function createOverlay() {
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
@@ -91,22 +90,22 @@ document.addEventListener('DOMContentLoaded', function() {
     dot.addEventListener('click', () => showSlide(i));
   });
 
-  // Next arrow navigation
-  if (nextArrow) {
-    nextArrow.addEventListener('click', nextSlide);
+  // Next button navigation
+  if (nextBtn) {
+    nextBtn.addEventListener('click', nextSlide);
   }
 
   // Start auto-scrolling
   resetAutoScroll();
 
   // Pause auto-scroll when user hovers over carousel
-  const carousel = document.querySelector('.carousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', () => {
+  const slider = document.querySelector('.main-slider');
+  if (slider) {
+    slider.addEventListener('mouseenter', () => {
       clearInterval(autoScrollInterval);
     });
 
-    carousel.addEventListener('mouseleave', resetAutoScroll);
+    slider.addEventListener('mouseleave', resetAutoScroll);
   }
 
   // Initialize menu functionality

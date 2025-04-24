@@ -11,7 +11,7 @@
   <header class="site-header">
     <div class="inner">
       <div class="site-logo">
-        <img class="logo" src="images/logo-black.svg" alt="logo">
+        <img class="logo" src="images/VISIO_LOGO.png" alt="logo">
       </div>
       <div class="open-main-nav" onclick="toggleMenu()">
         <span></span>
@@ -19,16 +19,14 @@
         <span></span>
       </div>
     </div>
-    
     <nav class="site-main-nav">
       <div class="inner">
         <div class="close-main-nav" onclick="toggleMenu()">
-          <i class="fas fa-times"></i> <!-- Font Awesome X icon -->
+          <i class="fas fa-times"></i>
         </div>
         <div class="nav-site-logo">
           <img src="images/logo-black.svg" alt="logo">
         </div>
-        
         <div class="menu-main-menu-container">
           <ul>
             <li><a href="#">Home</a></li>
@@ -38,49 +36,34 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
-        
         <div class="animate-logo"></div>
       </div>
     </nav>
-  </header>
+</header>
 
  <!-- Hero section with carousel -->
- <section class="hero">
-  <div class="carousel">
-    <div class="slide active">
-      <img src="images/Background_image.png" class="carousel-img" alt="Background image">
-      <div class="rectangle">
-        <h4>LOOK BEYOND THE ORIGINAL</h4>
-      </div>
-    </div>
-    
-    <div class="slide">
-      <img src="images/hill_and_mountain.png" class="carousel-img" alt="Hill and mountain">
-      <div class="rectangle">
-        <h4>EXPLORE THE UNKNOWN</h4>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="images/sunset.png" class="carousel-img" alt="Sunset">
-      <div class="rectangle">
-        <h4>UNVEIL THE BEAUTY</h4>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="images/forest.png" class="carousel-img" alt="Forest">
-      <div class="rectangle">
-        <h4>DREAM IN COLOR</h4>
-      </div>
-    </div>
-
-    <!-- Arrow Navigation -->
-    <div class="arrow next" onclick="nextSlide()">
-    </div>
-
-    <!-- Dot Navigation -->
-    <div class="dots">
+ <section class="main-slider">
+  <div class="inner">
+    <a class="next-slide"></a>
+    <ul>
+      <li class="next" rel="2">
+        <h3>EXPLORE THE UNKNOWN</h3>
+        <img src="images/hill_and_mountain.png" class="carousel-img" alt="Hill and mountain">
+      </li>
+      <li class="next" rel="3">
+        <h3>UNVEIL THE BEAUTY</h3>
+        <img src="images/sunset.png" class="carousel-img" alt="Sunset">
+      </li>
+      <li class="next" rel="4">
+        <h3>DREAM IN COLOR</h3>
+        <img src="images/forest.png" class="carousel-img" alt="Forest">
+      </li>
+      <li class="active" rel="1">
+        <h3>LOOK BEYOND THE ORIGINAL</h3>
+        <img src="images/desert.jpg" class="carousel-img" alt="Background image">
+      </li>
+    </ul>
+    <div class="pagination">
       <span class="dot active" onclick="goToSlide(0)"></span>
       <span class="dot" onclick="goToSlide(1)"></span>
       <span class="dot" onclick="goToSlide(2)"></span>
@@ -90,74 +73,75 @@
 </section>
 
   <!-- intro section -->
-  <section class="home-intro">
+<section class="home-intro">
     <div class="inner">
-      <p>Visio is an investment management firm initially founded by Patrice Moyal in 2003. The nimble, highly focused and dynamic team manage assets across listed strategies for a diversified client base that includes some of the world's largest and most sophisticated investors.</p>
-      <div>
-        <img src="images/asset32.svg" alt="animated-logo">
+      <p>
+        "Visio is an investment management firm initially founded by Patrice Moyal in 2003. The nimble, highly focused and dynamic team manage assets across listed strategies for a diversified client base that includes some of the world's largest and most sophisticated investors."
+      </p>
+      <div class="animate-logo">
       </div>
     </div>
-  </section>
+</section>
   
-   <!-- Boxes Section -->
-   <section class="boxes">
-    <div class="box">
-      <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
-      <span>THE VISIO<br>DIFFERENCE</span>
-    </div>
-    <div class="box">
-      <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
-      <span>MEET THE VISIO<br>TEAM</span>
-    </div>
-    <div class="box">
-      <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
-      <span>OUR FUNDS AND<br>INVESTMENTS</span>
-    </div>
-  </section>
+<!-- Boxes Section -->
+<section class="boxes">
+  <div class="box">
+    <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
+    <span>THE VISIO<br>DIFFERENCE</span>
+  </div>
+  <div class="box">
+    <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
+    <span>MEET THE VISIO<br>TEAM</span>
+  </div>
+  <div class="box">
+    <img class="big-arrow" src="images/Arrow.svg" alt="Arrow">
+    <span>OUR FUNDS AND<br>INVESTMENTS</span>
+  </div>
+</section>
 
-  <section class="mission">
-    <div class="mission-box">
-      <span>
-        HEDGE FUNDS
-      </span>
-      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+<section class="mission">
+  <div class="mission-box">
+    <span>
+      HEDGE FUNDS
+    </span>
+    <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+  </div>
+  <div class="mission-box">
+    <span>
+      UNIT TRUSTS
+    </span>
+    <br>
+    <div class="small-arrow">
+      <img src="images/small-arrow.svg" alt="Arrow">
     </div>
-    <div class="mission-box">
-      <span>
-        UNIT TRUSTS
-      </span>
-      <br>
-      <div class="small-arrow">
-        <img src="images/small-arrow.svg" alt="Arrow">
-      </div>
-    </div>
-    <div class="mission-box">
-      <span>
-        SEGREGATED MANDATES
-      </span>
-      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
-    </div>
-    <div class="mission-box">
-      <span>
-        AFRICA FUNDS
-      </span>
-      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
-    </div>
-    <div class="mission-box">
-      <span>
-        RISK MANAGEMENT
-      </span>
-      <br>
-      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
-    </div>
-    <div class="mission-box">
-      <span>
-        FUND PERFORMANCE
-      </span>
-      <br>
-      <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
-    </div>
-  </section>
+  </div>
+  <div class="mission-box">
+    <span>
+      SEGREGATED MANDATES
+    </span>
+    <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+  </div>
+  <div class="mission-box">
+    <span>
+      AFRICA FUNDS
+    </span>
+    <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+  </div>
+  <div class="mission-box">
+    <span>
+      RISK MANAGEMENT
+    </span>
+    <br>
+    <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+  </div>
+  <div class="mission-box">
+    <span>
+      FUND PERFORMANCE
+    </span>
+    <br>
+    <img class="small-arrow" src="images/small-arrow.svg" alt="Arrow">
+  </div>
+</section>
 
   <script src="script.js"></script>
 </body>
