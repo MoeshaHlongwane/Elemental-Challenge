@@ -61,6 +61,10 @@ function toggleMenu() {
   
   // Toggle body scroll
   document.body.classList.toggle('no-scroll');
+
+    const logoPath = nav.classList.contains('open') 
+    ? 'images/LOGO_03_WHITE.png' 
+    : 'images/LOGO_03.png';
 }
 
 // Add scroll event for header shrinking
