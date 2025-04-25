@@ -9,6 +9,21 @@ body {
   overflow-x: hidden;
 }
 
+/* Desktop styles */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+
 /* ==================== */
 /* HEADER STYLES */
 /* ==================== */
@@ -783,15 +798,13 @@ h4 {
 .site-logo .logo {
   transition: filter 0.3s ease;
 }
-
 /* White logo when menu is open */
 .site-main-nav.open ~ .site-header .site-logo .logo {
-  filter: brightness(0) invert(1); /* Turns black logo to white */
+  filter: brightness(0) invert(1);
 }
 
-/* Alternative: If you want to change the nav logo color too */
 .site-main-nav.open .nav-site-logo img {
-  filter: brightness(0) invert(1); /* Optional: Change nav logo color */
+  filter: brightness(0) invert(1);
 }
 @media (max-width: 925px) {
   .home-intro .inner p {
@@ -815,9 +828,9 @@ h4 {
   gap: 10px;
   margin: 10px;
   padding: 0;
-  width: 100%;
+  width: 75%;
+  margin-left: 50px;
 }
-
 .box {
   flex: 1;
   height: 200px;
@@ -828,7 +841,53 @@ h4 {
   padding: 20px;
   position: relative;
   transition: transform 0.3s ease;
-  margin: 10px;
+  margin: 20px;
+  margin-left: -15px
+}
+
+@media (max-width: 1280px){
+  .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 0;
+    width: 95%;
+    margin-left: 20px;
+    
+  }
+}
+
+@media (max-width: 2600px){
+  .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 0;
+    width: 100%;
+    margin-left: 1px; 
+  } 
+  .big-arrow {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  margin-top: -15%;
+}
+}
+@media (max-width: 3200px){
+  .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 0;
+    width: 100%;
+    margin-left: 24px; 
+  }  
 }
 
 .box:hover {
@@ -839,12 +898,14 @@ h4 {
   width: 60px;
   height: 60px;
   margin-right: 20px;
-  margin-top: -25%;
+  margin-top: -15%;
+  margin-left: 35px;
 }
 
 .img span{
   right: 50px;
   margin-top: 100px;
+ 
 }
 
 .box span {
@@ -852,22 +913,26 @@ h4 {
   font-size: 25px;
   line-height: 1.4;
   font-weight: 400;
-  margin-top: 60px;
-  margin-left: -65px;
+  margin-top: 6px;
+  margin-bottom: -40px;
+   margin-left: -70px;
+}
+
+.box-container{
+  margin: 50px;
 }
 
 /* Mission Section */
 .mission {
-  display: flex;
+  display: flex;;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin: 50px ;
 }
 
 .mission-box {
   flex: 1;
-  min-width: 150px;
+  width: 100px;
   height: 50px;
   background-color: #244ac2;
   display: flex;
@@ -892,6 +957,7 @@ h4 {
 .mission-box span {
   color:white;
   line-height: 1.4;
+  font-size: 15px;
 }
 
 /* Responsive Adjustments */
@@ -909,13 +975,50 @@ h4 {
   }
   
   .box {
-      min-width: 100%;
+      min-width: 50%;
+      height: 150px;
+      margin-left: -30px;
   }
   .big-arrow {
     width: 40px;
     height: 40px;
-    margin-right: 15px;
+    margin-right: 80px;
+    margin-top: -5px;
+    margin-left: -10px; 
   }
+
+  .mission-box span {
+    color:white;
+    line-height: 1.4;
+    font-size: 10px;
+    margin-right: 100px;
+    margin-top: -5px;
+    
+  }
+  .mission-box {
+  flex: 1;
+  width: 300px;
+  height: 50px;
+  background-color: #244ac2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+  .box span {
+  color: white;
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: -40px;
+   margin-right: 10px;
+    margin-top: -30px;
+    margin-left: px; 
+}
 }
 
 /* ============================ */
